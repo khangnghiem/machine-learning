@@ -1,0 +1,26 @@
+experiment:
+  name: "016_wine_classifier"
+  description: "End-to-End Medallion test on Wine Quality"
+
+data:
+  dataset: "wine"
+  train_split: 0.8
+  test_split: 0.2
+  random_state: 42
+  target_column: "quality"
+
+model:
+  algorithm: "xgboost"
+  params:
+    n_estimators: 50
+    max_depth: 4
+    learning_rate: 0.1
+
+preprocessing:
+  scaler: "standard"
+  handle_missing: "median"
+  encode_categorical: false
+
+mlflow:
+  experiment_name: "machine-learning"
+  run_name: null
